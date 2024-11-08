@@ -1,20 +1,18 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from '@ionic/angular/standalone';
-
+import { CommonModule } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonIcon, IonButton, IonItem, IonAvatar, IonLabel, IonText } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { barbellOutline, notifications, accessibility, trophy, addCircleOutline } from 'ionicons/icons';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent],
+  imports: [IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonIcon, IonButton, IonItem, IonAvatar, IonLabel, IonText, CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class FolderPage implements OnInit {
-  public folder!: string;
-  private activatedRoute = inject(ActivatedRoute);
-  constructor() {}
-
-  ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+export class FolderPage {
+  constructor() {
+    addIcons({ barbellOutline, notifications, accessibility, trophy, addCircleOutline });
   }
 }

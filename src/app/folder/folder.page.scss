@@ -1,28 +1,121 @@
-ion-menu-button {
-  color: var(--ion-color-primary);
+.notification-button {
+  --background: var(--ion-color-dark);
+
+  &.new-notification {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: -2px;
+      width: 10px;
+      height: 10px;
+      background-color: var(--ion-color-tertiary);
+      border-radius: 50%;
+    }
+  }
 }
 
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.profile {
+  background: var(--ion-color-medium);
+  padding: 15px 25px;
+  border-radius: 0 0 50px 50px;
+
+  ion-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  &-buttons {
+    width: max-content;
+    padding: 10px 15px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: var(--ion-color-dark);
+    border-radius: 15px;
+
+    button {
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    ion-label {
+      font-size: 8px;
+      font-weight: bold;
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.section-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+
+  h3 {
+    font-size: 20px;
+  }
+
+  ion-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  ion-badge {
+    font-size: 4px;
+    color: var(--ion-color-ligth);
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
+.custom-card {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
 
-#container a {
-  text-decoration: none;
+  img {
+    filter: brightness(0.3) contrast(1.2);
+    width: 100%;
+    height: 150px;
+  }
+
+  ion-button.button-new-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+
+    ion-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    ion-label {
+      margin-left: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .card-info {
+    position: absolute;
+    top: 60%;
+    right: -5%;
+    width: 100%;
+
+    ion-button {
+      font-size: 10px;
+    }
+
+    h4 {
+      margin: 0 0 0 10px;
+    }
+  }
 }
